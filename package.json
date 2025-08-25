@@ -1,0 +1,31 @@
+{
+	"name": "tbank-edu-extension",
+	"description": "импорт и экспорт тинькофф заданий",
+	"version": "1.0.0",
+
+	"author": {
+		"url": "https://github.com/nvd05",
+		"name": "kotonai"
+	},
+
+	"types": "./index.d.ts",
+
+	"devDependencies": {
+		"@types/chrome": "^0.1.4",
+		"@types/webpack": "^5.28.5",
+		"copy-webpack-plugin": "^13.0.1",
+		"generate-json-from-js-webpack-plugin": "^0.1.1",
+		"ts-loader": "^9.5.4",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.9.2",
+		"web-ext": "^8.9.0",
+		"webpack": "^5.101.3",
+		"webpack-cli": "^6.0.1"
+	},
+
+	"scripts": {
+		"start": "web-ext run -s dist",
+		"start:dev:chrome": "npm run start -- -t chromium -u chrome://extensions/ -u https://edu.tbank.ru/",
+		"build:dev:chrome": "webpack --watch"
+	}
+}
